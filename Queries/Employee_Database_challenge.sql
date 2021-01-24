@@ -20,3 +20,9 @@ rt.title
 INTO unique_titles
 FROM retirement_titles AS rt
 ORDER BY emp_no ASC, to_date DESC;
+
+SELECT COUNT(ut.title), ut.title
+INTO retiring_titles
+FROM unique_titles as ut
+GROUP BY ut.title
+ORDER BY ut.count DESC;
